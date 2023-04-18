@@ -1,4 +1,4 @@
 flask==2.2.3
 nats-py==2.2.0
 flask[async]
-aiohttp=3.8.4
+aiohttp==3.8.4

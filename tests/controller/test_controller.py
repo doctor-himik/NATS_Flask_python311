@@ -33,7 +33,7 @@ async def local_post(url: str, payload: dict, timeout: int = 10) -> bytes:
 
 async def get(url: str, params: dict = None) -> aiohttp.ClientResponse:
     """
-    Async get method with retry option
+    Async get method
     @param url: target url
     @param params: params for get request
     @return:
