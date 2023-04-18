@@ -21,7 +21,7 @@
 8. Also, we can run unit tests only with: `pytest -m unit` - you can run any time
 9. Also, we can run unit tests only with: `pytest -m integration` there are few of them 
 10. Also, we can run end-two-end tests only with: `pytest -m e2e` WARNING! - Make sure that solution is running before launching E2E tests. 
-11. Finally, you can try Web UI on `http://localhost:5002/index` or just `http://localhost:5002/' work with it
+11. Finally, you can try Web UI on `http://localhost:5002/index` or just `http://localhost:5002/` work with it
 
 
 ## Helpers and troubleshooting
