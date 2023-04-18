@@ -2,7 +2,7 @@
 
 1. Make sure you've docker and python 3.11 installed on your computer. Run command `python -m pip install --upgrade pip`
 2. Make sure there's internet connection to make docker images available to be downloaded
-3. We need to pull nats image using. `docker pull nats:latest` `docker run -p 4222:4222 -ti nats:latest` or it will be done by docker-compose
+3. Run command `pip install -r requirements.txt` and `pip install -r test_requirements.txt` to make sure package are good
 4. Run terminal from the project root and use command: `docker-compose build` and `docker-compose up` or just `docker-compose up`
 5. Now we can use CLI running commands like: `main.py -operator add 133 -882` where: 
    *  `-operator` is a base parameter
