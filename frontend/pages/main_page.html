@@ -1,0 +1,41 @@
+<!-- pages/main_page.html-->
+
+<html>
+
+<head>
+    <title>Simple GUI for application</title>
+    <style>
+		div {
+			width: 700px;
+			border: 2px solid green;
+			padding: 10px;
+			margin-bottom: 5px;
+		}
+    </style>
+</head>
+
+<body>
+
+<div>
+    {% if result %}
+    <h3 style="text-align: center; color: #3f7320;font-size:18px;">{{result}}</h3>
+    {% else %}
+    <h3 style="text-align: center; color: #3f7320;font-size:18px;">Calculation operation, result will be here</h3>
+    {% endif %}
+    <form method="POST"
+          action="{{ url_for('operate') }}">
+        <input type="text"
+               name="A"
+               placeholder="A type int or float">
+        <input type="text"
+               name="B"
+               placeholder="B type int or float">
+        <button type="submit" name="operator" value="add">add</button>
+        <button type="submit" name="operator" value="subtract">subtract</button>
+        <button type="submit" name="operator" value="multiply">multiply</button>
+        <button type="submit" name="operator" value="divide">divide</button>
+    </form>
+</div>
+</body>
+
+</html>

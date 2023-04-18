@@ -1,0 +1,50 @@
+version: "3"
+
+services:
+
+  nats:
+    container_name: nats
+    image: "nats:latest"
+    networks:
+      - zion
+    ports:
+      - "4222:4222"  # PC_PORT:CONTAINER_PORT
+
+  worker:
+    build: worker/ # build a worker Dockerfile
+    container_name: worker
+    image: worker:latest
+    ports:
+      - "5001:5001"  # PC_PORT:CONTAINER_PORT
+    depends_on:
+      - nats
+    networks:
+      - zion
+    command: python ./worker.py
+
+  controller:
+    build: controller/  # build a controller Dockerfile
+    container_name: controller
+    image: controller
+    ports:
+      - "5000:5000"  # PC_PORT:CONTAINER_PORT
+    depends_on:
+      - nats
+    networks:
+      - zion
+    command: python ./controller.py
+
+  frontend:
+    build: frontend/
+    container_name: frontend
+    image: frontend
+    ports:
+      - "5002:5002"  # PC_PORT:CONTAINER_PORT
+    depends_on:
+      - controller
+    networks:
+      - zion
+    command: python ./frontend.py
+
+networks:
+  zion:
